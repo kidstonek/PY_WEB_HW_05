@@ -1,5 +1,6 @@
 import multiprocessing
 from datetime import datetime
+from time import time
 
 
 def factorize(*number):
@@ -14,7 +15,8 @@ def factorize(*number):
 
 
 if __name__ == '__main__':
-    script_start = datetime.now()
+    # script_start = datetime.now()
+    timer = time()
     a, b, c, d = factorize(128, 255, 99999, 10651060)
 
     assert a == [1, 2, 4, 8, 16, 32, 64, 128]
@@ -23,5 +25,6 @@ if __name__ == '__main__':
     assert d == [1, 2, 4, 5, 7, 10, 14, 20, 28, 35, 70, 140, 76079, 152158, 304316, 380395, 532553, 760790, 1065106,
                  1521580, 2130212, 2662765, 5325530, 10651060]
 
-    script_end = datetime.now()
-    print((script_end - script_start).total_seconds())
+    # script_end = datetime.now()
+    # print((script_end - script_start).total_seconds())
+    print(round(time()-timer, 2))
